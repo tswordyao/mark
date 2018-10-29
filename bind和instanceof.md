@@ -39,6 +39,14 @@ slice(arrLikelist)
 ## 悲剧是怎样衍生的？
 库里面使用bind往往又是为了生成一些基本的方法。比如es5shim是在用在Array.forEach，当Array.forEach已经被polyfill，其他的库就会跳过它---就像错误的bind的polyfill写在前面就跳过了后面库里正确的bind实现一样。然后业务或框架代码跑起来的时候，就毫无防备地去使用这个被玩坏的bind玩坏的forEach，然后就在instanceof这一步全面爆发，block代码，所有都凉凉....
 
+## 如何判断是否具有原生的bind方法
+```
+Function.prototype.hasOwnproperty('bind')
+&&
+!Function.prototype.propertyIsEnumerable('bind')
+// 因为es3不支持defineProperty, 所以无法模拟不可枚举属性
+```
+
 > es5shim中关于bind的polyfill是比较标准的。bind如果除了this还预传了参数，会改变其length。es5shim用很绕的办法的实现了一遍。（新建了一个函数并模拟形参传入）
 
 > bind后的函数是[native code], 无法再通过toString解析函数字符串

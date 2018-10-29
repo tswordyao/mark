@@ -159,3 +159,9 @@ Xcode can be updated from the App Store.
 看来xcode好久没升级了
 
 
+---
+```
+Error: Cannot find module 'internal/fs'
+如果运行bower或gulp等出现这个错误, npm cache clean后, 重装bower或gulp即可
+一般是因为node版本高了, 所以装新版的bower或gulp
+```
