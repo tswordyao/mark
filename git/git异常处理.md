@@ -9,4 +9,20 @@ git config --add core.filemode false
 ```
 
 
-如果已经不小心commit，git fetch --all 再 git reset --hard origin/master
+- 如果已经不小心commit，git fetch --all 再 git reset --hard origin/master
+
+```
+不想这个目录跟git有任何关系 删除git删除git目录联系
+rm -rf .git
+```
+
+
+* 当git记录过多，尤其历史中有大文件删减时，Git项目将变得非常大，.git/objects/ 文件太大
+
+```
+git clone ssh://git@g.h.com/study.git --depth 99
+或使用这个https://git-lfs.github.com/
+或git rebase
+
+git clone ssh://git@g.xxxx.com:22222/yooc.git --depth 99
+```
