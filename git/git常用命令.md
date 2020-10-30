@@ -1,4 +1,5 @@
-十五. Git branch 分支
+# git 常用
+```
 查看当前有哪些branch
 $ git branch
 
@@ -24,8 +25,10 @@ commit到本地
 $ git commit -a -m "xm test case"
 
 加了-a，在commit 的时候，能帮你省一步 git add ，但也只是对修改和删除文件有效， 新文件还是要git add，不然就是 UNtracked 
+```
 
-………….
+## Git 查看
+```
 查看几次commit的区别
 $ git diff
 
@@ -38,8 +41,10 @@ git commit -c ORIG_HEAD
 git reset HEAD~        (波浪号后面加数字n可以指代最近的n次)
 如果是带了--sort参数,仅仅是修改commit备注, add操作保留,
 如果是带了--hard参数,完全是撤销commit修改, 文件内容也被改变,
+```
 
-
+## Git 分支
+```
 将branch push到远程
 $ git push origin xm2.x
 
@@ -65,10 +70,10 @@ $ git push origin --delete xm
 
 删除本地的远程分支：
 git branch -r -D origin/BranchName  这句靠谱
+```
 
-
-十六. Git 合并分支
-
+## Git 合并分支
+```
 首先切换到想要合并到的分枝下，运行git merge 要合进来的branch
 
 例如本例中将test2分支合并到xm3分支的话，
@@ -169,4 +174,4 @@ $ git push origin v1.0
 $ git push [remote] --tags
 
 -------------------------------------------------------------
-
+```
