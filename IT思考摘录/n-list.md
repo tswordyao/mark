@@ -1,6 +1,10 @@
 # -- n list
 
 ```
+wavesurfer.js
+HTML5 Web Audio API
+live2d
+datagrip
 varnish
 GSLB
 LSS LMS MPS

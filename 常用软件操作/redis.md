@@ -13,11 +13,11 @@ cd /usr/local/Cellar/redis/6.0.5/bin
 
 配置开机启动
 ln -sfv /usr/local/opt/redis/*.plist ~/Library/LaunchAgents
+```
 
 
-
-* 用TreeSoft管理可视化redis 和 memecached。
-
+## 用TreeSoft管理可视化redis 和 memecached。
+```
 通过命令行方式连接redis
 
 1、首先安装redis客户端
@@ -49,4 +49,35 @@ SET exists-key "value" XX   #只能更新键值对, 只有上一句创建过才�
 自增,    INCR count  不存在count默认为0
 自减decr    DECR count  不存在count默认为0
 list
+```
+> 我mac用iRedis查看远程redis内容
+
+
+## redis-server 命令启动
+
+```
+配置文件在 /usr/local/etc/redis.conf
+
+使用配置文件启动 redis-server /usr/local/etc/redis.conf
+
+开机启动redis命令 $ ln -sfv /usr/local/opt/redis/*.plist ~/Library/LaunchAgents
+
+使用launchctl启动redis server $ launchctl load ~/Library/LaunchAgents/homebrew.mxcl.redis.plist
+
+停止redis server的自启动 $ launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.redis.plist
+
+卸载redis和它的文件 
+brew uninstall redis
+ rm ~/Library/LaunchAgents/homebrew.mxcl.redis.plist
+
+
+测试redis server是否启动 $ redis-cli ping
+
+redis-cli  -h redis所在服务器ip
+
+redis命令行详解：
+-c：集群查找
+-h：redis主机ip
+-p：redis端口：默认6379
+-a：如果redis加锁，需要传递redis密码
 ```
