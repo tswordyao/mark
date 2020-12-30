@@ -26,3 +26,15 @@ git clone ssh://git@g.h.com/study.git --depth 99
 
 git clone ssh://git@g.xxxx.com:22222/yooc.git --depth 99
 ```
+
+
+## 修复git submodule引起的detached head
+```
+重新建立submodule，加入时使用-b参数，使得母项目追踪子项目的指定branch（否则默认不追踪）：
+git submodule add -b <branch> <repository> [<submodule-path>]
+git submodule update --remote
+
+
+简单的一行命令递归修复所有子项目的detached head（其中默认都追踪子项目的master branch）：
+git submodule foreach -q --recursive 'git checkout $(git config -f $toplevel
+```

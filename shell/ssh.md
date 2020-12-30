@@ -31,6 +31,6 @@ logout 再退出
 ```
 
 
-
-
+###  ssh复制远程机器文件到本地
+scp root@192.168.1.100:/home/root/A  /home/B
 
