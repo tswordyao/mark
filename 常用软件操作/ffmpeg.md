@@ -99,6 +99,8 @@ ffmpeg -ss 0:1:30 -t 0:0:20 -i input.avi -vcodec copy -acodec copy output.avi   
 
 ffmpeg -ss 0:0:02 -t 0:0:48 -i 913.MP4 -vcodec h264 -vf scale=960:540 output.mp4
 
+ffmpeg -ss 0:59:30 -t 2:11:0 -i 801458742989160448.mp4 -vcodec copy -acodec copy new.mp4
+
 6.视频录制
 ffmpeg –i rtsp://192.168.3.205:5555/test –vcodec copy out.avi
 

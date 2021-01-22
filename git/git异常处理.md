@@ -8,6 +8,11 @@
 git config --add core.filemode false
 ```
 
+**换行符也会引起warning: LF will be replaced by CRLF in.., 配置忽略**
+```
+git config --global core.autocrlf false
+```
+
 
 - 如果已经不小心commit，git fetch --all 再 git reset --hard origin/master
 
